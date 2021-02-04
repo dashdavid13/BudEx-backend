@@ -3,7 +3,7 @@ class CreateNotes < ActiveRecord::Migration[6.0]
     create_table :notes do |t|
       t.string :content
       t.belongs_to :expense, null: false, foreign_key: true, on_delete: :cascade
-
+      t.belongs_to :user, null: false, foreign_key: true, on_delete: :cascade
       t.timestamps
     end
   end

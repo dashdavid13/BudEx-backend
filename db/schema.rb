@@ -28,9 +28,11 @@ ActiveRecord::Schema.define(version: 2021_02_04_184122) do
   create_table "notes", force: :cascade do |t|
     t.string "content"
     t.bigint "expense_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["expense_id"], name: "index_notes_on_expense_id"
+    t.index ["user_id"], name: "index_notes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -45,6 +47,5 @@ ActiveRecord::Schema.define(version: 2021_02_04_184122) do
 
   add_foreign_key "expenses", "users"
   add_foreign_key "notes", "expenses"
+  add_foreign_key "notes", "users"
 end
-
-
