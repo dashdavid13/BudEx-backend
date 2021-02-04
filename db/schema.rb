@@ -46,3 +46,5 @@ ActiveRecord::Schema.define(version: 2021_02_04_184122) do
   add_foreign_key "expenses", "users"
   add_foreign_key "notes", "expenses"
 end
+
+
