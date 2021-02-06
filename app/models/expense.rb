@@ -1,4 +1,4 @@
 class Expense < ApplicationRecord
-  belongs_to :user
   has_many :notes, dependent: :destroy
+  belongs_to :user
 end
