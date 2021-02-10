@@ -1,8 +1,13 @@
 class AuthController < ApplicationController
 
-    def login
-      @current_user = User.first
-      render json: @current_user
-    end
+  def login
+    user = User.first
+    render json: user
+  end
+
+  def signup
+    user = User.last
+    render json: user
+  end
   
 end

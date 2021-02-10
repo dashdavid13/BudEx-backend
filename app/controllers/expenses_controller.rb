@@ -11,8 +11,14 @@ class ExpensesController < ApplicationController
 
 
     def create
-        expense = Expense.create(expense_params)
-        render json: expense
+        current_user = User.first
+
+        expense = current_user.expenses.create!(expense_params)
+        if expense.valid?
+            render json: expense
+        else
+            render json: {error: expense.errors.full_messages}, status: :unprocessable_entity
+        end
     end
 
     def update
@@ -30,6 +36,6 @@ class ExpensesController < ApplicationController
     private
 
     def expense_params
-        params.permit(:due_date, :name, :cost, :user_id)
+        params.permit( :name, :cost, :user_id, :id )
     end
 end
