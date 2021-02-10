@@ -6,8 +6,12 @@ class UsersController < ApplicationController
     end 
 
     def show
-        user = User.find(params[:id])
-        render json: user
+        user = User.find_by(id: params[:id])
+        if user
+            render json: user
+        else
+            render json: {error: 'User not found'}
+        end
     end
 
 
@@ -31,6 +35,6 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.permit(:first_name, :last_name, :username, :password, :monthly_income)
+        params.permit(:first_name, :last_name, :username, :password, :monthly_income, :id)
     end
 end
