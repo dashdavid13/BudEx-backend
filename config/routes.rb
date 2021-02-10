@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
  
-
   resources :notes
   resources :expenses
   resources :users
@@ -11,8 +10,8 @@ Rails.application.routes.draw do
   post 'expenses/new', to: 'expenses#create'
   delete 'expenses/:id', to: 'expenses#delete'
   patch 'users/:id', to: 'users#update'
+  post 'users/new', to: 'users#create'
   delete 'users/:id', to: 'users#delete'
-  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
 
