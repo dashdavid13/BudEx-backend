@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
 
   get '/login', to: 'auth#login'
-  post 'expenses/:id', to: 'expenses#update'
+  patch 'expenses/:id', to: 'expenses#update'
   post 'expenses/new', to: 'expenses#create'
   delete 'expenses/:id', to: 'expenses#delete'
   patch 'users/:id', to: 'users#update'

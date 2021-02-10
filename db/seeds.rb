@@ -15,11 +15,11 @@ Note.destroy_all
 david = User.create(first_name: 'David', last_name: 'Medina', username: 'dashdavid', password: 1234, monthly_income: 5000 )
 tim = User.create(first_name: 'Tim', last_name: 'Smith', username: 'tinytime', password: 1234, monthly_income: 4000 )
 
-a = Expense.create(due_date: 1 , name: "rent", cost: 1500, user_id: david.id)
-b = Expense.create(due_date: 1 , name: "gym", cost: 145, user_id: david.id)
-c = Expense.create(due_date: 1 , name: "wifi", cost: 1500, user_id: david.id)
-d = Expense.create(due_date: 1 , name: "food", cost: 500, user_id:tim.id)
-e = Expense.create(due_date: 1 , name: "electricity", cost: 60, user_id:tim.id)
+a = Expense.create( name: "rent", cost: 1500, user_id: david.id)
+b = Expense.create( name: "gym", cost: 145, user_id: david.id)
+c = Expense.create( name: "wifi", cost: 1500, user_id: david.id)
+d = Expense.create( name: "food", cost: 500, user_id:tim.id)
+e = Expense.create( name: "electricity", cost: 60, user_id:tim.id)
 
 
 
