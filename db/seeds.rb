@@ -12,8 +12,8 @@ Note.destroy_all
 
 
 
-david = User.create(first_name: 'David', last_name: 'Medina', username: 'dashdavid', password: 1234, monthly_income: 5000 )
-tim = User.create(first_name: 'Tim', last_name: 'Smith', username: 'tinytime', password: 1234, monthly_income: 4000 )
+david = User.create(first_name: 'David', last_name: 'Medina', username: 'dashdavid', password: "1234", monthly_income: 5000 )
+tim = User.create(first_name: 'Tim', last_name: 'Smith', username: 'tinytime', password: "1234", monthly_income: 4000 )
 
 a = Expense.create( name: "rent", cost: 1500, user_id: david.id)
 b = Expense.create( name: "gym", cost: 145, user_id: david.id)

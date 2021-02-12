@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
   
-  resources :users
+  
+  
   resources :expenses
-  resources :notes
 
 
-  post '/signup' =>  'auth#signup'	  
+  post '/register' =>  'auth#register'	  
   get '/login', to: 'auth#login' 
- 
+  post '/login', to: 'auth#login'
+  
+  get "/home" => "users#home"
 
   get "users" => "users#index"
   get "users/:id" => "users#show"
@@ -16,12 +18,12 @@ Rails.application.routes.draw do
   delete 'users/:id', to: 'users#delete'
    
 
-
   get "expenses" => "expenses#index"
   get "expenses/:id" => "expenses#show"
   post "expenses/new" => "expenses#create"
   patch "expenses/:id" => "expenses#update"
   delete "expenses/:id" => "expenses#delete"
+  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
 

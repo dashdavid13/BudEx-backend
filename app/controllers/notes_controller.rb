@@ -1,4 +1,7 @@
 class NotesController < ApplicationController
+    before_action :authorize
+    
+
     def index 
         notes = Note.all
         render json: notes
