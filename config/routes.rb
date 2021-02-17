@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get "users/:id" => "users#show"
   patch 'users/:id', to: 'users#update'	
   post 'users/new', to: 'users#create'
-  delete 'users/:id', to: 'users#delete'
+  delete 'users/:id', to: 'users#destroy'
    
 
   get "expenses" => "expenses#index"
